@@ -1,0 +1,8 @@
+body{
+    background-color: white;
+}
+
+a.navbar-brand{
+    cursor: default;
+    text-decoration: none;
+}

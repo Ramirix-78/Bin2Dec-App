@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/b9fda71d45.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Bin2Dec</title>
+  </head>
+  <body>
+    <!-- BEGIN MD-LG-XL-XXL NAV BAR -->
+    <div class="navbar navbar-dark bg-dark col-sm-12 d-none d-sm-block">
+      <div class="container-fluid">
+        <a href="" class="navbar-brand">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Overwatch_2_logo.svg/2560px-Overwatch_2_logo.svg.png" alt="Logo" width="36" height="30" class="d-inline-block align-text-top"/> CONVERSOR DE BINARIO A DECIMAL
+        </a>
+      </div>
+    </div>
+    <!-- END SM-MD-LG-XL-XXL NAV BAR -->
+    <!-- BEGIN XS NAV BAR -->
+    <div class="navbar navbar-dark bg-dark col-sm-12 d-block d-sm-none">
+      <div class="container-fluid">
+        <a href="" class="navbar-brand text-break">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Overwatch_2_logo.svg/2560px-Overwatch_2_logo.svg.png" alt="Logo" width="36" height="30" class="d-inline-block align-text-top"/> BINARIO A DECIMAL
+        </a>
+      </div>
+    </div>
+    <!-- END XS NAV BAR -->
+    <!-- BEGIN SM-MD-LG-XL-XXL INPUTS GROUP -->
+    <div class="container d-none d-sm-block">
+      <div class="row my-5">
+        <div class="col-sm-12 col-md-12">
+          <div class="input-group col-sm-2 col-md-2 mb-3">
+            <span class="input-group-text fw-bold">BINARIO</span>
+            <div class="form-floating col-sm-10 col-md-10">
+              <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Código"/>
+              <label for="floatingInputGroup1">Código</label>
+            </div>
+            <button class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-title="Borrar" type="button" id="button-addon2">
+              <i class="fa-solid fa-delete-left"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12">
+          <div class="input-group col-sm-2 mb-3">
+            <span class="input-group-text fw-bold">DECIMAL</span>
+            <div class="form-floating col-sm-10 col-md-10">
+              <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Salida" />
+              <label for="floatingInputGroup1">Salida</label>
+            </div>
+            <button class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Copiar" type="button" id="button-addon2">
+              <i class="fa-solid fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END SM-MD-LG-XL-XXL INPUTS GROUP -->
+    <!-- BEGIN XS INPUTS GROUP -->
+    <div class="container d-block d-sm-none">
+      <div class="row my-5">
+        <div class="col-sm-12 col-md-12">
+          <div class="input-group col-sm-2 col-md-2 mb-3">
+            <span class="input-group-text fw-bold">BIN</span>
+            <div class="form-floating col-sm-10 col-md-10">
+              <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Código"/>
+              <label for="floatingInputGroup1">Código</label>
+            </div>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+              <i class="fa-solid fa-delete-left"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12">
+          <div class="input-group col-sm-2 mb-3">
+            <span class="input-group-text fw-bold">DEC</span>
+            <div class="form-floating col-sm-10 col-md-10">
+              <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Salida" />
+              <label for="floatingInputGroup1">Salida</label>
+            </div>
+            <button class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-title="Borrar" type="button" id="button-addon2">
+              <i class="fa-solid fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END INPUTS GROUP -->
+    <!-- BEGIN SM-MD-LG-XL-XXL BUTTONS GROUP -->
+    <div class="container text-center d-none d-sm-block">
+      <div class="row justify-content-center my-5">
+        <div class="col-sm-12 col-md-12">
+          <button type="button" id="pegar-sm-xl" data-bs-toggle="tooltip" data-bs-title="Pegar" class="btn btn-info col-sm-12 col-md-4 my-2 mx-3"><i class="fa-regular fa-paste"></i></button>
+          <button type="button" class="btn btn-info col-sm-12 col-md-3 my-2 mx-3"><i class="fa-solid fa-0"></i></button>
+          <button type="button" class="btn btn-info col-sm-12 col-md-3 my-2 mx-3"><i class="fa-solid fa-1"></i></i></button>
+        </div>
+      </div>
+    </div>
+    <!-- END SM-MD-LG-XL-XXL BUTTONS GROUP -->
+    <!-- BEGIN XS BUTTONS GROUP -->
+    <div class="container text-center d-block d-sm-none">
+      <div class="row justify-content-center my-5">
+        <div class="col-sm-12 col-md-12">
+          <button type="button" class="btn btn-info col-12 my-2"><i class="fa-regular fa-paste"></i></button>
+          <button type="button" class="btn btn-info col-12 my-2"><i class="fa-regular fa-0"></i></button>
+          <button type="button" class="btn btn-info col-12 my-2"><i class="fa-regular fa-1"></i></button>
+        </div>
+      </div>
+    </div>
+    <!-- END XS BUTTONS GROUP -->
+    <!-- BEGIN SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+    <script src="./assets/js/app.js"></script>
+    <!-- END SCRIPTS-->
+  </body>
+</html>
