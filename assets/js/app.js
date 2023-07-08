@@ -1,3 +1,5 @@
+import { conversor } from "./convert.js";
+
 const btn_pegar = document.getElementById('btn_pegar');
 const bin_0 = document.getElementById('btn_bin_0');
 const bin_1 = document.getElementById('btn_bin_1');
@@ -33,10 +35,17 @@ btn_pegar.addEventListener('click', (e) => {
                 wrapper.innerHTML = [
                     `<div class="alert alert-${type} alert-dismissible" role="alert">`,
                     `   <div class="fw-bolder"><i class="fa-solid fa-triangle-exclamation"></i> ${message}</div>`,
-                    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="reiniciar()"></button>',
+                    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
                     '</div>'
                 ].join('');
                 alertPlaceholder.append(wrapper);
+
+                const botonCerrar = wrapper.querySelector('.btn-close');
+                botonCerrar.addEventListener('click', () => {
+                    reiniciar();
+                    wrapper.remove();
+                });
+
                 alerta++;
             }
             alert('Debes vaciar el campo para poder pegar texto desde el portapapeles', 'warning');
@@ -58,10 +67,17 @@ btn_pegar.addEventListener('click', (e) => {
                     wrapper.innerHTML = [
                         `<div class="alert alert-${type} alert-dismissible" role="alert">`,
                         `   <div class="fw-bolder"><i class="fa-solid fa-triangle-exclamation"></i> ${message}</div>`,
-                        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="reiniciar()"></button>',
+                        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
                         '</div>'
                     ].join('');
                     alertPlaceholder.append(wrapper);
+                    
+                    const botonCerrar = wrapper.querySelector('.btn-close');
+                    botonCerrar.addEventListener('click', () => {
+                        reiniciar();
+                        wrapper.remove();
+                    });
+
                     alerta++;
                 }
                 alert('Solo puedes pegar 8 dígitos binarios', 'warning');
@@ -105,11 +121,18 @@ function ValidarBinarios(val){
                 wrapper.innerHTML = [
                     `<div class="alert alert-${type} alert-dismissible" role="alert">`,
                     `   <div class="fw-bolder"><i class="fa-solid fa-triangle-exclamation"></i> ${message}</div>`,
-                    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="reiniciar()"></button>',
+                    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
                     '</div>'
                 ].join('');
                 alertPlaceholder.append(wrapper);
-                alerta++;;
+
+                const botonCerrar = wrapper.querySelector('.btn-close');
+                botonCerrar.addEventListener('click', () => {
+                    reiniciar();
+                    wrapper.remove();
+                });
+
+                alerta++;
             }
             alert('No puede agregar más de 8 dígitos binarios', 'warning');
             bin_0.setAttribute("disabled", "");
@@ -143,6 +166,7 @@ function reiniciar(){
 function borrar(){
     let codigo = input_bin.value;
     let codigo_borrado = codigo.slice(0, -1);
+    contador--;
     input_bin.value = codigo_borrado;
 }
 
@@ -155,5 +179,12 @@ function detenerVaciar(){
 }
 
 function vaciarTexto(){
+    contador = 0;
     input_bin.value = '';
 }
+
+btn_convert.addEventListener('click', (e) => {
+    let codigo = input_bin.value;
+    const codigo_convertido = conversor(codigo);
+    alert(codigo_convertido);
+});
