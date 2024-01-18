@@ -184,7 +184,36 @@ function vaciarTexto(){
 }
 
 btn_convert.addEventListener('click', (e) => {
-    let codigo = input_bin.value;
-    const codigo_convertido = conversor(codigo);
-    alert(codigo_convertido);
+    if (input_bin.value.length  > 0){
+        let codigo = input_bin.value;
+        let codigo_convertido = conversor(codigo);
+        alert(codigo_convertido);
+    }
+    else {
+        if(alerta == 0){
+            const alert = (message, type) => {
+                const wrapper = document.createElement('div');
+                wrapper.innerHTML = [
+                    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                    `   <div class="fw-bolder"><i class="fa-solid fa-triangle-exclamation"></i> ${message}</div>`,
+                    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                    '</div>'
+                ].join('');
+                alertPlaceholder.append(wrapper);
+                
+                const botonCerrar = wrapper.querySelector('.btn-close');
+                botonCerrar.addEventListener('click', () => {
+                    reiniciar();
+                    wrapper.remove();
+                });
+
+                alerta++;
+            }
+            alert('Debes escribir un código binario antes de intentar la conversión', 'danger');
+            bin_0.setAttribute("disabled", "");
+            bin_1.setAttribute("disabled", "");
+            btn_pegar.setAttribute("disabled", "");
+            btn_convert.setAttribute("disabled", "");
+        }
+    }
 });

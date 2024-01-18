@@ -1,10 +1,11 @@
-export function conversor(binario){
-    let longitud = 'Longitud: ' + binario.length;
-    return longitud
-}
+export function conversor(binario) {
+    let exp = binario.length - 1;
+    let decimal = 0;
 
-/* 
-    NECESITO OBTENER LA LONGITUD DE LA CADENA, LUEGO
-    DE OBTENERLA AGREGAR LOS O'S RESTANTES A LA CADENA 
-    Y ASÍ REALIZAR LA CONVERSION
-*/
+    for(let i = 0; i < binario.length; i++) {
+        let posBinario = parseInt(binario[i], 10);
+        decimal += posBinario * Math.pow(2, exp);
+        exp--;
+    }
+    return decimal;
+}

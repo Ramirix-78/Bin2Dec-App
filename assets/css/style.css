@@ -5,4 +5,8 @@ body{
 a.navbar-brand{
     cursor: default;
     text-decoration: none;
+    /*font-size: 2vmax;*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
